@@ -119,32 +119,32 @@
   -webkit-text-stroke: 1px #fff;
 }
 
-.saturation {
-  filter: saturate(150%);
+.grayscale {
+  filter: brightness(150%) grayscale(70%) contrast(100%) saturate(80%);
 }
 
-.contrast {
-  filter: contrast(120%);
+.saturate {
+  filter: brightness(120%) saturate(300%);
 }
 
-.sepia-saturate {
-  filter: sepia(0.3) saturate(1.5);
+.hue {
+  filter: hue-rotate(30deg);
 }
 
-.hue-rotate-sepia {
-  filter: hue-rotate(90deg) sepia(0.4);
+.invert {
+  filter: brightness(180%) contrast(120%) saturate(70%) invert(0.7);
 }
 
-.contrast-saturate-grayscale {
-  filter: contrast(1.3) saturate(0) grayscale(1);
+.sepia {
+  filter: sepia(90%);
 }
 
-.brightness-contrast {
-  filter: brightness(1.2) contrast(0.9);
+.blur {
+  filter: blur(1rem);
 }
 
-.brightness-contrast-blur {
-  filter: brightness(1) contrast(1.5) blur(2px);
+.combined {
+  filter: hue-rotate(90deg) brightness(110%) contrast(40%) saturate(170%) blur(0.15rem);
 }
 
 @supports not (-webkit-text-stroke: 1px #fff) {
