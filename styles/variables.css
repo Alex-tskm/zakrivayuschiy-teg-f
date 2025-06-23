@@ -3,15 +3,15 @@
   --main-font: 'Inter-Variable';
 	--main-font-weight: 400;
   --title-font-weight: 700;
-  --accidental-font: 'PressStart2P-Regular';
-/*  --accidental-color: #000;*/
+  --accidental-font: 'PressStart2P';
   --animation-fill-color: #FF0000;
   --contour-color: #000;
+  --text-stroke-color: #fff;
   --background-image: repeating-linear-gradient(
       to right,
       #d3d3d3 0 2px,
       transparent 2px 4px
     ),
     repeating-linear-gradient(to bottom, #d3d3d3 0 2px, transparent 2px 4px),
-    linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 100%);
+    linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 100%);  
 }

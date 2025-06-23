@@ -36,6 +36,7 @@
   background-color: #fff;
   outline: 2px solid #000;
   outline-offset: -2px;
+  padding: clamp(7.5rem, 7.1479rem + 1.5023vw, 8rem) 0 clamp(7.5rem, 7.1479rem + 1.5023vw, 8rem);
 }
 
 .header__logo {
@@ -43,25 +44,15 @@
   font-weight: var(--main-font-weight);
   font-size: clamp(3.063rem, 2.71rem + 1.502vw, 4.063rem);
   text-transform: uppercase;
-  padding-top: clamp(
-    120px,
-    calc(122px + (16 * ((100vw - 375px) / 1065))),
-    128px
-  );
+  text-decoration: none;
 }
 
 .header__title {
   justify-self: center;
-  font-weight: var(--main-font-weight);
-  line-height: 14px;
+  font-weight: var(--main-font-weight);  
   text-transform: uppercase;
   font-size: clamp(0.875rem, 0.226rem + 2.7692vw, 1.4375rem);
   padding-top: 20px;
-  padding-bottom: clamp(
-    120px,
-    calc(24px + (5 * ((100vw - 375px) / 1065))),
-    128px
-  );
 }
 
 .content {
@@ -116,8 +107,17 @@
   right: 13px;
   opacity: 0.5;
   mix-blend-mode: hard-light;
-  -webkit-text-stroke: 1px #fff;
+  text-shadow: 0 0 1px var(--text-stroke-color);
 }
+
+@supports (-webkit-text-stroke: 1px var(--text-stroke-color)) or (text-stroke: 1px var(--text-stroke-color)) {
+  .section__image-text {
+    text-shadow: none;
+    -webkit-text-stroke: 1px var(--text-stroke-color);
+    text-stroke: 1px var(--text-stroke-color);
+  }
+}
+
 
 .grayscale {
   filter: brightness(150%) grayscale(70%) contrast(100%) saturate(80%);
@@ -179,14 +179,15 @@
   position: relative;
   border: 2px solid #000;
   transition: border-color 0.3s ease;
+  background-color: transparent;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 .button:focus {
   outline: none;
 }
 
-.button:focus-visible {
-  transition: box-shadow 0.3s ease-in-out;
+.button:focus-visible {  
   box-shadow: 2px 2px 0 0 #000;
 }
 
@@ -222,7 +223,7 @@
   position: relative;
   font-family: var(--accidental-font, 'Press Start Regular'), sans-serif;
   font-weight: var(--main-font-weight);
-  font-size: 14px; /* 0.9 rem */
+  font-size: 14px; 
   mix-blend-mode: difference;
   z-index: 2;
 }
@@ -231,6 +232,7 @@
   max-height: 38px;
   border: 2px solid transparent;
   transition: border-color 0.3s ease;
+  background-color: transparent;
 }
 
 .card__icon-button:focus {
@@ -253,20 +255,26 @@
 
 .like-icon:hover .main-body {
   fill: var(--contour-color);
-  transition-delay: 0.05s;
+  transition: fill 0.3s;
+  transition-delay: 0.05s;  
 }
 
 .like-icon:hover .core {
-  fill: var(--contour-color);
+  fill: var(--contour-color);  
+  transition: fill 0.3s;
+  transition-delay: 0s;
 }
 
 .like-icon:active .main-body {
   fill: var(--animation-fill-color);
+  transition: fill 0.3s;
   transition-delay: 0.05s;
 }
 
 .like-icon:active .core {
-  fill: var(--animation-fill-color);
+  fill: var(--animation-fill-color);  
+  transition: fill 0.3s;
+  transition-delay: 0s;  
 }
 
 .like-icon.is-liked {
@@ -276,15 +284,19 @@
 
 .like-icon.is-liked .main-body {
   fill: var(--animation-fill-color);
+  transition: fill 0.3s;
   transition-delay: 0.05s;
 }
 
 .like-icon.is-liked .core {
   fill: var(--animation-fill-color);
+  transition: fill 0.3s;
+  transition-delay: 0s;  
 }
 
 .like-icon.is-liked .contour {
   fill: var(--animation-fill-color);
+  transition: fill 0.3s;
   transition-delay: 0.06s;
 }
 
@@ -304,7 +316,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-block-start: 50px;
   margin-block-end: 100px;
 }
 
@@ -329,11 +340,9 @@
 
 .dialog {
   position: fixed;
-  max-width: 341px;
-  min-height: 191px;
+  max-width: 341px;  
   border: 2px solid #000;
-  background: #fff;
-  inset: 0;
+  background: #fff;  
 }
 
 .dialog[open] {
@@ -415,8 +424,7 @@
   }
 
   .dialog {
-    max-width: 357px;
-    min-height: 193px;
+    max-width: 357px;    
   }
 
   .dialog-body {
