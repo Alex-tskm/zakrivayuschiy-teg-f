@@ -17,7 +17,7 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--main-font, 'Times New Roman'), serif;
-  font-variation-settings: 'wght' var(--main-font-weight);
+  font-variation-settings: 'wght' var(--main-font-weight, 400);
   color: #000;
   background-color: #fff;
   background-image: var(--background-image);
@@ -41,7 +41,7 @@
 
 .header__logo {
   font-family: inherit;
-  font-weight: var(--main-font-weight);
+  font-weight: var(--main-font-weight, 400);
   font-size: clamp(3.063rem, 2.71rem + 1.502vw, 4.063rem);
   text-transform: uppercase;
   text-decoration: none;
@@ -49,7 +49,7 @@
 
 .header__title {
   justify-self: center;
-  font-weight: var(--main-font-weight);  
+  font-weight: var(--main-font-weight, 400);  
   text-transform: uppercase;
   font-size: clamp(0.875rem, 0.226rem + 2.7692vw, 1.4375rem);
   padding-top: 20px;
@@ -73,7 +73,7 @@
   font-family: var(--main-font, 'Arial'), sans-serif;
   font-size: 18px;
   line-height: 22px;
-  font-variation-settings: 'wght' var(--title-font-weight);
+  font-variation-settings: 'wght' var(--title-font-weight, 700);
   padding: 7px 11px 4px 12px;
 }
 
@@ -97,7 +97,7 @@
   content: '';
   position: absolute;
   font-family: var(--accidental-font, 'Press Start Regular'), sans-serif;
-  font-weight: var(--main-font-weight);
+  font-weight: var(--main-font-weight, 400);
   font-size: 14px;
   line-height: 14px;
   letter-spacing: 0;
@@ -107,14 +107,14 @@
   right: 13px;
   opacity: 0.5;
   mix-blend-mode: hard-light;
-  text-shadow: 0 0 1px var(--text-stroke-color);
+  text-shadow: 0 0 1px var(--text-stroke-color, #fff);
 }
 
-@supports (-webkit-text-stroke: 1px var(--text-stroke-color)) or (text-stroke: 1px var(--text-stroke-color)) {
+@supports (-webkit-text-stroke: 1px var(--text-stroke-color, #fff)) or (text-stroke: 1px var(--text-stroke-color, #fff)) {
   .section__image-text {
     text-shadow: none;
-    -webkit-text-stroke: 1px var(--text-stroke-color);
-    text-stroke: 1px var(--text-stroke-color);
+    -webkit-text-stroke: 1px var(--text-stroke-color, #fff);
+    text-stroke: 1px var(--text-stroke-color, #fff);
   }
 }
 
@@ -158,7 +158,7 @@
   font-family: var(--main-font, 'Arial'), sans-serif;
   font-size: 18px;
   line-height: 21px;
-  font-variation-settings: 'wght' var(--main-font-weight);
+  font-variation-settings: 'wght' var(--main-font-weight, 400);
   padding: 25px;
 }
 
@@ -222,7 +222,7 @@
   color: #fff;
   position: relative;
   font-family: var(--accidental-font, 'Press Start Regular'), sans-serif;
-  font-weight: var(--main-font-weight);
+  font-weight: var(--main-font-weight, 400);
   font-size: 14px; 
   mix-blend-mode: difference;
   z-index: 2;
@@ -254,25 +254,25 @@
 }
 
 .like-icon:hover .main-body {
-  fill: var(--contour-color);
+  fill: var(--contour-color, #000);
   transition: fill 0.3s;
   transition-delay: 0.05s;  
 }
 
 .like-icon:hover .core {
-  fill: var(--contour-color);  
+  fill: var(--contour-color, #000);  
   transition: fill 0.3s;
   transition-delay: 0s;
 }
 
 .like-icon:active .main-body {
-  fill: var(--animation-fill-color);
+  fill: var(--animation-fill-color, #ff0000);
   transition: fill 0.3s;
   transition-delay: 0.05s;
 }
 
 .like-icon:active .core {
-  fill: var(--animation-fill-color);  
+  fill: var(--animation-fill-color, #ff0000);  
   transition: fill 0.3s;
   transition-delay: 0s;  
 }
@@ -283,19 +283,19 @@
 }
 
 .like-icon.is-liked .main-body {
-  fill: var(--animation-fill-color);
+  fill: var(--animation-fill-color, #ff0000);
   transition: fill 0.3s;
   transition-delay: 0.05s;
 }
 
 .like-icon.is-liked .core {
-  fill: var(--animation-fill-color);
+  fill: var(--animation-fill-color, #ff0000);
   transition: fill 0.3s;
   transition-delay: 0s;  
 }
 
 .like-icon.is-liked .contour {
-  fill: var(--animation-fill-color);
+  fill: var(--animation-fill-color, #ff0000);
   transition: fill 0.3s;
   transition-delay: 0.06s;
 }
@@ -371,12 +371,12 @@
 }
 
 .dialog-icon-floppy {
-  color: var(--contour-color);
+  color: var(--contour-color, #000);
 }
 
 .dialog-columns__text {
   font-family: var(--accidental-font, 'Press Start Regular'), sans-serif;
-  font-weight: var(--main-font-weight);
+  font-weight: var(--main-font-weight, 400);
   font-size: 14px;
   line-height: 21px;
   max-width: 65%;
