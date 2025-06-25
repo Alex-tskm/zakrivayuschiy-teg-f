@@ -343,6 +343,7 @@
   max-width: 341px;  
   border: 2px solid #000;
   background: #fff;  
+  padding-bottom: 28px;
 }
 
 .dialog[open] {
